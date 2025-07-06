@@ -1,5 +1,5 @@
 import { Metadata } from "next";
-import HomeClient from "./HomeClient";
+import HomeClient from "./home/HomeClient";
 
 export const metadata: Metadata = {
   title: "Welcome to zappy",
@@ -7,7 +7,6 @@ export const metadata: Metadata = {
 };
 
 export default function Home() {
-  
   return (
     <HomeClient/>
   );

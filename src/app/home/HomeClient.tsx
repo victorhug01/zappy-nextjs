@@ -1,8 +1,9 @@
-'use client';
+'use client'
 
 import { Menu } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
+import ThemeSwitcher from "../components/ui/theme-swicther";
 
 export default function HomeClient() {
     return (
@@ -19,6 +20,7 @@ export default function HomeClient() {
                     <div className="hidden md:flex gap-3 w-full justify-end items-center">
                         <button className="border-2 border-white p-1.5 rounded-md text-white hover:border-gray-400 hover:text-gray-400 hover:cursor-pointer w-26" aria-label="Botão de cadastro">cadastre-se</button>
                         <button className="bg-white border-2 border-white p-1.5 rounded-md hover:cursor-pointer w-26" aria-label="Botão de login">login</button>
+                        <ThemeSwitcher/>
                     </div>
                     <Menu className="text-white block md:hidden"/>
                 </nav>
