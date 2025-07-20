@@ -9,10 +9,10 @@ export default function ThemeSwitcher() {
   const [mounted, setMounted] = useState(false);
 
   // Marca como montado no cliente
-  useEffect(() => {setMounted(true);}, []);
+  useEffect(() => {setMounted(true)}, []);
 
   // Evita renderização durante o SSR
   if (!mounted) return null;
 
-  return <>{theme !== "light" ? <Moon onClick={() => setTheme("light")} className="hover:cursor-pointer" aria-label="Alternar para tema claro" /> : <SunMedium onClick={() => setTheme("dark")} className="hover:cursor-pointer" aria-label="Alternar para tema escuro" />}</>;
+  return <>{theme !== "light" ? <SunMedium onClick={() => setTheme("light")} className="hover:cursor-pointer" aria-label="Alternar para tema claro" /> : <Moon onClick={() => setTheme("dark")} className="hover:cursor-pointer" aria-label="Alternar para tema escuro" />}</>;
 }
