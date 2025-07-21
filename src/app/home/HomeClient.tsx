@@ -1,9 +1,9 @@
 'use client'
 
-import { Menu } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import ThemeSwitcher from "../components/ui/theme-swicther";
+import DrawerComponent from "./components/drawer";
 
 export default function HomeClient() {
     return (
@@ -22,7 +22,7 @@ export default function HomeClient() {
                         <Link href={"/signIn"}><button className="bg-foreground-default hover:bg-primary hover:text-foreground-default text-foreground-inverse border-2 border-foreground-default hover:border-primary p-1.5 rounded-md hover:cursor-pointer w-26" aria-label="Botão de login">login</button></Link>
                         <ThemeSwitcher/>
                     </div>
-                    <Menu className="text-foreground-default block md:hidden"/>
+                    <DrawerComponent/>
                 </nav>
             </header>
 
