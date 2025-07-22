@@ -1,4 +1,7 @@
 @import "tailwindcss";
+@plugin "daisyui" {
+  themes: false;
+}
 
 @theme {
   --color-primary: var(--primary);
@@ -8,15 +11,15 @@
 }
 
 :root {
-  --primary: #D93BBE;
+  --primary: #9163F2;
   --background: #f5f5f5;
-  --foreground-default: #000000;
+  --foreground-default: #212121;
   --foreground-inverse: #ffffff;
 }
 
 .dark {
   --background: #212121;
-  --foreground-inverse: #000000;
+  --foreground-inverse: #212121;
   --foreground-default: #f5f5f5;
 
 }

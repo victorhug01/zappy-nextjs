@@ -14,5 +14,5 @@ export default function ThemeSwitcher() {
   // Evita renderização durante o SSR
   if (!mounted) return null;
 
-  return <>{theme !== "light" ? <SunMedium onClick={() => setTheme("light")} className="hover:cursor-pointer" aria-label="Alternar para tema claro" /> : <Moon onClick={() => setTheme("dark")} className="hover:cursor-pointer" aria-label="Alternar para tema escuro" />}</>;
+  return <>{theme !== "light" ? <SunMedium onClick={() => setTheme("light")} className="hover:cursor-pointer text-foreground-default" aria-label="Alternar para tema claro" /> : <Moon onClick={() => setTheme("dark")} className="hover:cursor-pointer text-foreground-default" aria-label="Alternar para tema escuro" />}</>;
 }
