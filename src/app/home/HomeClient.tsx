@@ -19,7 +19,7 @@ export default function HomeClient() {
                     </div>
                     <div className="hidden md:flex gap-3 w-full justify-end items-center">
                         <button className="border-2 border-foreground-default p-1.5 rounded-md text-foreground-default hover:border-primary hover:text-primary hover:cursor-pointer w-26" aria-label="Botão de cadastro">cadastre-se</button>
-                        <Link href={"/signIn"}><button className="bg-foreground-default hover:bg-primary hover:text-foreground-default text-foreground-inverse border-2 border-foreground-default hover:border-primary p-1.5 rounded-md hover:cursor-pointer w-26" aria-label="Botão de login">login</button></Link>
+                        <Link href={"/signIn"} className="bg-foreground-default hover:bg-primary text-center hover:text-foreground-default text-foreground-inverse border-2 border-foreground-default hover:border-primary p-1.5 rounded-md hover:cursor-pointer w-26" aria-label="Botão de login">login</Link>
                         <ThemeSwitcher/>
                     </div>
                     <DrawerComponent/>
