@@ -1,5 +1,5 @@
 import { Metadata } from "next";
-import HomeClient from "./home/HomeClient";
+import HomeClient from "./home";
 
 export const metadata: Metadata = {
   title: "Welcome to zappy",
