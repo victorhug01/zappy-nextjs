@@ -12,7 +12,7 @@ export default function NavbarBack() {
       <nav className="w-full h-16 bg-background flex fixed justify-between items-center px-3 overflow-x-hidden" aria-label="Navbar Desktop">
         <ArrowLeft onClick={() => router.back()} className="text-foreground-default" cursor={'pointer'}/>
         <Link href={"/"}>
-          <Image src="/zappy.png" width={64} className="min-w-16" height={64} alt="Brand zappy top left" priority={true} fetchPriority="high" />
+          <Image src="/zappy.webp" width={64} className="min-w-16" height={64} alt="Brand zappy top left" priority={true} fetchPriority="high" />
         </Link>
       </nav>
     </header>

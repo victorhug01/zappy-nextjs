@@ -9,7 +9,7 @@ export default function HomeClient() {
         <div>
             <header>
                 <nav className="w-full h-16 flex dark:bg-background fixed justify-between items-center px-3 overflow-x-hidden" aria-label="Navbar Desktop">
-                    <Link href={'/'}><Image src="/zappy.png" width={64}  className="min-w-16" height={64} alt="Brand zappy top left" priority={true} fetchPriority="high"/></Link>
+                    <Link href={'/'}><Image src="/zappy.webp" width={64}  className="min-w-16" height={64} alt="Brand zappy top left" priority={true} fetchPriority="high"/></Link>
                     <div className="hidden md:flex gap-8 w-full items-center lg:visible pl-4">
                         <Link href={"#section1"} className="text-foreground-default hover:text-primary inline-block relative after:content-[''] after:absolute after:w-full after:scale-x-0 after:h-0.5 after:bottom-0 after:left-0 after:bg-primary after:transition-transform after:duration-200 after:ease-out hover:after:scale-x-100 after:origin-bottom-left">Início</Link>
                         <Link href={"#section2"} className="text-foreground-default hover:text-primary inline-block relative after:content-[''] after:absolute after:w-full after:scale-x-0 after:h-0.5 after:bottom-0 after:left-0 after:bg-primary after:transition-transform after:duration-200 after:ease-out hover:after:scale-x-100 after:origin-bottom-left">Sobre</Link>
