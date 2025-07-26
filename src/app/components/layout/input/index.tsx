@@ -1,7 +1,6 @@
 'use client'
 
 import React from 'react'
-import scrollIntoView from 'scroll-into-view-if-needed'
 
 export default function Input(props: React.InputHTMLAttributes<HTMLInputElement>) {
   return (
@@ -12,11 +11,10 @@ export default function Input(props: React.InputHTMLAttributes<HTMLInputElement>
 
         const target = e.currentTarget
 
-        scrollIntoView(target, {
-          behavior: 'auto',
-          block: 'center',
-          scrollMode: 'always',
-        })
+        const isMobile = typeof window !== 'undefined' && window.innerWidth <= 768;
+        if (!isMobile) {
+          target.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
 
       }}
     />

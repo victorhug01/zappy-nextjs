@@ -9,7 +9,7 @@ export default function FormComponent() {
 
   return (
     <>
-      <form className="w-full sm:max-w-lg flex flex-col items-center justify-center gap-4 h-dvh min-h-dvh pt-16">
+      <form className="w-full sm:max-w-lg flex flex-col items-center justify-center gap-4">
 
         <div className="w-full text-center grid gap-10 mb-6">
           <h1 className="text-foreground-default text-4xl">SignIn</h1>
@@ -22,16 +22,19 @@ export default function FormComponent() {
               <span className="!bg-foreground-inverse text-primary">Email</span>
           </label>
 
-          <label className="floating-label w-full">
+          <div>
+            <label className="floating-label w-full">
               <Input type={visible ? 'text' : 'password'} placeholder="Password" className="input input-lg bg-foreground-inverse border-foreground-default border-[1.5px] sm:border-2 rounded-[10px] md:rounded-[7px] text-foreground-default w-full h-14 md:h-12 text-base" />
               <span className="!bg-foreground-inverse text-primary">Password</span>
-              <button onClick={() => setVisible(!visible)} type="button" className="!absolute right-4 top-1/2 -translate-y-1/2 text-foreground-default z-10">{visible ? <EyeOff size={23}/> : <Eye size={23}/>}</button>
-          </label>
+              <div onClick={() => setVisible(!visible)} className="!absolute right-4 top-1/2 -translate-y-1/2 text-foreground-default z-10">{visible ? <EyeOff size={23} className="hover:text-primary hover:cursor-pointer"/> : <Eye size={23} className="hover:text-primary hover:cursor-pointer"/>}</div>
+            </label>
+            <p className="text-foreground-default text-right underline hover:text-primary hover:cursor-pointer pt-2">Esqueci minha senha</p>
+          </div>
 
         </div>
         <div className="w-full grid text-center gap-3 place-items-center">
           <button className="bg-foreground-default hover:bg-primary hover:text-foreground-default text-foreground-inverse border-foreground-default hover:border-primary p-1.5 rounded-md hover:cursor-pointer w-full sm:max-w-64 font-medium h-12 md:h-10" aria-label="Botão de login">Conectar</button>
-          <p className="text-primary underline hover:cursor-pointer">Esqueci minha senha</p>
+          <p className="text-foreground-default underline hover:text-primary hover:cursor-pointer">Não possui uma conta? clique aqui</p>
         </div>
 
       </form>

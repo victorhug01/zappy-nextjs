@@ -10,9 +10,11 @@ export const metadata: Metadata = {
 export default function SignIn() {
     
   return (
-    <section className="w-full h-dvh min-h-dvh flex justify-center items-center p-6 md:p-8">
+    <>
       <NavbarBack/>
-      <FormComponent/>
-    </section>
+      <section className="w-full h-auto min-h-dvh flex flex-col items-center justify-center p-6 pt-16">
+        <FormComponent/>
+      </section>
+    </>
   );
 }
