@@ -1,6 +1,7 @@
 'use client'
 
 import React from 'react'
+import scrollIntoView from 'scroll-into-view-if-needed'
 
 export default function Input(props: React.InputHTMLAttributes<HTMLInputElement>) {
   return (
@@ -11,15 +12,12 @@ export default function Input(props: React.InputHTMLAttributes<HTMLInputElement>
 
         const target = e.currentTarget
 
-        const isMobile = typeof navigator !== 'undefined' && /iPhone|iPad|iPod|Android/i.test(navigator.userAgent)
+        scrollIntoView(target, {
+          behavior: 'auto',
+          block: 'center',
+          scrollMode: 'always',
+        })
 
-        const delay = isMobile ? 150 : 50
-
-        setTimeout(() => {
-          if (document.body.contains(target)) {
-            target.scrollIntoView({ behavior: 'smooth', block: 'center' })
-          }
-        }, delay)
       }}
     />
   )
