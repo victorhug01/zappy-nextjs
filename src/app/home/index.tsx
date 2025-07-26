@@ -17,7 +17,7 @@ export default function HomeClient() {
                         <Link href={"#section4"} className="text-foreground-default hover:text-primary inline-block relative after:content-[''] after:absolute after:w-full after:scale-x-0 after:h-0.5 after:bottom-0 after:left-0 after:bg-primary after:transition-transform after:duration-200 after:ease-out hover:after:scale-x-100 after:origin-bottom-left">Planos</Link>
                     </div>
                     <div className="hidden md:flex gap-3 w-full justify-end items-center">
-                        <Link href={"/signIn"} className="border-2 border-foreground-default p-1.5 text-center rounded-md text-foreground-default hover:border-primary hover:text-primary hover:cursor-pointer w-26" aria-label="Botão de cadastro">cadastre-se</Link>
+                        <Link href={"/signUp"} className="border-2 border-foreground-default p-1.5 text-center rounded-md text-foreground-default hover:border-primary hover:text-primary hover:cursor-pointer w-26" aria-label="Botão de cadastro">cadastre-se</Link>
                         <Link href={"/signIn"} className="bg-foreground-default hover:bg-primary text-center hover:text-foreground-default text-foreground-inverse border-2 border-foreground-default hover:border-primary p-1.5 rounded-md hover:cursor-pointer w-26" aria-label="Botão de login">login</Link>
                     </div>
                     <DrawerComponent/>

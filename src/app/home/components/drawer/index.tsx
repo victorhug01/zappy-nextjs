@@ -22,7 +22,7 @@ export default function DrawerComponent() {
               <ThemeSwitcher/>
             </div>
             <div className="grid gap-2 w-full h-fit">
-              <Link href={"/signIn"} className="border-2 border-foreground-inverse p-1.5 text-center grid place-items-center rounded-md text-foreground-inverse hover:border-primary hover:text-primary hover:cursor-pointer w-full min-h-12" aria-label="Botão de cadastro">Cadastre-se</Link>
+              <Link href={"/signUp"} className="border-2 border-foreground-inverse p-1.5 text-center grid place-items-center rounded-md text-foreground-inverse hover:border-primary hover:text-primary hover:cursor-pointer w-full min-h-12" aria-label="Botão de cadastro">Cadastre-se</Link>
               <Link href={"/signIn"} className="bg-foreground-inverse hover:bg-primary text-center grid place-items-center hover:text-foreground-inverse text-foreground-default border-2 border-foreground-inverse hover:border-primary p-1.5 rounded-md hover:cursor-pointer w-full min-h-12" aria-label="Botão de login">login</Link>
             </div>
           </aside>

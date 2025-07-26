@@ -12,7 +12,7 @@
 
 :root {
   --primary: #9163F2;
-  --background: #f5f5f5;
+  --background: #ffffff;
   --foreground-default: #121212;
   --foreground-inverse: #ffffff;
 }
@@ -20,6 +20,6 @@
 .dark {
   --background: #121212;
   --foreground-inverse: #121212;
-  --foreground-default: #f5f5f5;
+  --foreground-default: #ffffff;
 
 }
