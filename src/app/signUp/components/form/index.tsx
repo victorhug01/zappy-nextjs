@@ -13,7 +13,7 @@ export default function FormComponent() {
       <form className="w-full sm:max-w-lg flex flex-col items-center justify-center gap-4">
         <div className="w-full text-center grid mb-4">
           <h1 className="text-foreground-default text-4xl">SignUp</h1>
-          <p className="text-foreground-default text-center pt-7">Crie sua conta de forma segura e<br/>rápida</p>
+          <p className="text-foreground-default text-center pt-7">Create your account safely and<br/>quickly</p>
         </div>
         <div className="w-full grid gap-5 mb-6">
             <label className="floating-label w-full">
@@ -40,8 +40,8 @@ export default function FormComponent() {
         </div>
 
         <div className="w-full grid text-center gap-3 place-items-center">
-          <button className="bg-foreground-default hover:bg-primary hover:text-foreground-default text-foreground-inverse border-foreground-default hover:border-primary p-1.5 rounded-md hover:cursor-pointer w-full sm:max-w-64 font-medium h-13 md:h-10" aria-label="Botão de login">Conectar</button>
-          <Link href={'/signIn'} className="text-foreground-default underline hover:cursor-pointer hover:text-primary">Já possui uma contsa? clique aqui</Link>
+          <button className="bg-foreground-default hover:bg-primary hover:text-foreground-default text-foreground-inverse border-foreground-default hover:border-primary p-1.5 rounded-md hover:cursor-pointer w-full sm:max-w-64 font-medium h-13 md:h-10" aria-label="Botão de login">Register</button>
+          <Link href={'/signIn'} className="text-foreground-default underline hover:cursor-pointer hover:text-primary">Already have an account? Click here</Link>
         </div>
       </form>
     </>
