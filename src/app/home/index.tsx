@@ -1,32 +1,43 @@
 'use client'
 
-import gsap from 'gsap';
 import Link from "next/link";
 import Image from "next/image";
-import { useLayoutEffect } from 'react'
+import { useEffect } from 'react'
 import DrawerComponent from "./components/drawer";
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 export default function HomeClient() {
 
-    useLayoutEffect(() => {
+    useEffect(() => {
+        let ctx: gsap.Context | undefined;
 
-        gsap.registerPlugin(ScrollTrigger)
+        const loadGsap = async () => {
+            const gsapModule = await import('gsap');
+            const scrollTriggerModule = await import('gsap/ScrollTrigger');
 
-        gsap.to(".macbook",{
-            width: "100%",
-            scrollTrigger: {
+            const gsap = gsapModule.default;
+            const ScrollTrigger = scrollTriggerModule.default;
+
+            gsap.registerPlugin(ScrollTrigger);
+
+            ctx = gsap.context(() => {
+            gsap.to(".macbook", {
+                width: "100%",
+                opacity: 1,
+                scrollTrigger: {
                 trigger: '.mackbookAnimation',
-                // markers: true,
                 end: "top 80%",
                 scrub: true,
-            }
-        })
+                }
+            });
+            });
+        };
 
-        return () => {
-            gsap.killTweensOf('.mackbookAnimation');
-        }
-    }, [])
+        loadGsap();
+
+        return () => ctx?.revert();
+    }, []);
+
+
 
     return (
         <div>
@@ -51,7 +62,9 @@ export default function HomeClient() {
                 <section className="w-full h-screen flex justify-center items-center pt-14 p-6" id="home">
                     <div className="w-full sm:max-w-3xl flex flex-col items-center justify-center gap-16">
                         <h1 className="text-4xl sm:text-5xl md:text-6xl text-center text-foreground-default">
-                            Seu <span className="text-primary">mundo</span>, suas <span className="text-primary">conexões</span>, e um universo <span className="text-primary">sem limites</span> para explorar.
+                            Seu <span className="text-primary">mundo</span>, suas{" "}
+                            <span className="text-primary">conexões</span>, e um universo{" "}
+                            <span className="text-primary">sem limites</span> para explorar.
                         </h1>
                         <div className="w-full flex flex-col md:flex-row justify-center gap-4">
                             <Link href={"/signUp"} className="font-medium bg-foreground-default hover:bg-primary text-center hover:text-foreground-default text-foreground-inverse border-2 border-foreground-default hover:border-primary p-2.5 rounded-md hover:cursor-pointer w-full" aria-label="Botão de Comece sua jornada">Comece sua jornada</Link>
@@ -61,7 +74,7 @@ export default function HomeClient() {
                 </section>
 
                 <section className="w-full h-fit md:h-screen flex justify-center items-start mackbookAnimation" id="section2">
-                    <Image src="/mackbook.svg" width={0} height={0} className="md:max-w-5/6 transform translate-y-[-150px] lg:translate-y-[-50px] macbook" alt="macbook image" priority={true} fetchPriority="high"/>
+                    <Image src="/mackbook.svg" width={200} height={100} className="md:max-w-5/6 transform translate-y-[-150px] lg:translate-y-[-50px] macbook opacity-0" alt="macbook image" priority={false} fetchPriority="low"/>
                 </section>
                 
 
