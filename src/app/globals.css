@@ -1,11 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
 @import "tailwindcss";
 @plugin "daisyui" {
   themes: false;
 }
 
 @theme {
-  --font-display: "Lato", sans-serif;
   --color-primary: var(--primary);
   --color-background: var(--background);
   --color-foreground-default: var(--foreground-default);
