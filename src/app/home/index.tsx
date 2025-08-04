@@ -43,7 +43,7 @@ export default function HomeClient() {
 
 
     return (
-        <div>
+        <>
             <header>
                 <nav className="w-full h-16 flex bg-background fixed justify-between items-center px-3 overflow-x-hidden z-50" aria-label="Navbar Desktop">
                     <Link href={'/'}><Image src="/zappy.webp" width={64}  className={`min-w-16`} height={64} alt="Brand zappy top left" priority={true} fetchPriority="high"/></Link>
@@ -91,10 +91,24 @@ export default function HomeClient() {
 
             </main>
 
-            <footer className="w-full h-20 bg-blue-800 text-white flex justify-center items-center">
-                <p>© 2025 - Todos os direitos reservados</p>
+            <footer className="bg-background text-center">
+                <div className="w-full max-w-screen-xl mx-auto p-4 md:py-8">
+                    <div className="flex justify-center flex-col sm:flex-row sm:justify-between">
+                        <div className="flex text-center sm:text-left items-center mb-2 gap-4">
+                            <Image src="/zappy.webp" width={80} height={80} alt="macbook image" priority={false} fetchPriority="low"/>
+                            <span className="self-center text-2xl font-semibold whitespace-nowrap text-foreground-default">ZAPPY</span>
+                        </div>
+                        <ul className="flex flex-wrap justify-center sm:justify-start items-center mb-6 text-sm font-medium text-foreground-default gap-6">
+                            <li><Link href={"#"} className={`${linkAnimation}`}>About</Link></li>
+                            <li><Link href={"#"} className={`${linkAnimation}`}>Privacy Policy</Link></li>
+                            <li><Link href={"#"} className={`${linkAnimation}`}>Licensing</Link></li>
+                            <li><Link href={"#"} className={`${linkAnimation}`}>Contact</Link></li>
+                        </ul>
+                    </div>
+                    <hr className="my-6 border-foreground-default" />
+                    <span className="block text-sm text-foreground-default">© 2023 ZAPPY™. All Rights Reserved.</span>
+                </div>
             </footer>
-
-        </div>
+        </>
     )
 }
