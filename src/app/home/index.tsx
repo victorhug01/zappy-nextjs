@@ -6,6 +6,7 @@ import { useEffect } from 'react'
 import DrawerComponent from "./components/drawer";
 
 export default function HomeClient() {
+    const linkAnimation: string = "text-foreground-default hover:text-primary inline-block relative after:content-[''] after:absolute after:w-full after:scale-x-0 after:h-0.5 after:bottom-0 after:left-0 after:bg-primary after:transition-transform after:duration-200 after:ease-out hover:after:scale-x-100 after:origin-bottom-left";
 
     useEffect(() => {
         let ctx: gsap.Context | undefined;
@@ -20,15 +21,17 @@ export default function HomeClient() {
             gsap.registerPlugin(ScrollTrigger);
 
             ctx = gsap.context(() => {
-            gsap.to(".macbook", {
-                width: "100%",
-                opacity: 1,
-                scrollTrigger: {
-                trigger: '.mackbookAnimation',
-                end: "top 80%",
-                scrub: true,
-                }
-            });
+
+                gsap.to(".macbook", {
+                    width: "100%",
+                    opacity: 1,
+                    scrollTrigger: {
+                    trigger: '.mackbookAnimation',
+                    end: "top 5%",
+                    scrub: true,
+                    }
+                });
+                
             });
         };
 
@@ -43,14 +46,14 @@ export default function HomeClient() {
         <div>
             <header>
                 <nav className="w-full h-16 flex bg-background fixed justify-between items-center px-3 overflow-x-hidden z-50" aria-label="Navbar Desktop">
-                    <Link href={'/'}><Image src="/zappy.webp" width={64}  className="min-w-16" height={64} alt="Brand zappy top left" priority={true} fetchPriority="high"/></Link>
-                    <div className="hidden md:flex gap-8 w-full items-center lg:visible pl-4">
-                        <Link href={"#home"} className="text-foreground-default hover:text-primary inline-block relative after:content-[''] after:absolute after:w-full after:scale-x-0 after:h-0.5 after:bottom-0 after:left-0 after:bg-primary after:transition-transform after:duration-200 after:ease-out hover:after:scale-x-100 after:origin-bottom-left">Início</Link>
-                        <Link href={"#section2"} className="text-foreground-default hover:text-primary inline-block relative after:content-[''] after:absolute after:w-full after:scale-x-0 after:h-0.5 after:bottom-0 after:left-0 after:bg-primary after:transition-transform after:duration-200 after:ease-out hover:after:scale-x-100 after:origin-bottom-left">Sobre</Link>
-                        <Link href={"#section3"} className="text-foreground-default hover:text-primary inline-block relative after:content-[''] after:absolute after:w-full after:scale-x-0 after:h-0.5 after:bottom-0 after:left-0 after:bg-primary after:transition-transform after:duration-200 after:ease-out hover:after:scale-x-100 after:origin-bottom-left">Demonstração</Link>
-                        <Link href={"#section4"} className="text-foreground-default hover:text-primary inline-block relative after:content-[''] after:absolute after:w-full after:scale-x-0 after:h-0.5 after:bottom-0 after:left-0 after:bg-primary after:transition-transform after:duration-200 after:ease-out hover:after:scale-x-100 after:origin-bottom-left">Planos</Link>
+                    <Link href={'/'}><Image src="/zappy.webp" width={64}  className={`min-w-16`} height={64} alt="Brand zappy top left" priority={true} fetchPriority="high"/></Link>
+                    <div className={`hidden md:flex gap-8 w-full items-center lg:visible pl-4`}>
+                        <Link href={"#home"} className={`${linkAnimation}`}>Início</Link>
+                        <Link href={"#section2"} className={`${linkAnimation}`}>Sobre</Link>
+                        <Link href={"#section3"} className={`${linkAnimation}`}>Demonstração</Link>
+                        <Link href={"#section4"} className={`${linkAnimation}`}>Planos</Link>
                     </div>
-                    <div className="hidden md:flex gap-3 w-full justify-end items-center">
+                    <div className={`hidden md:flex gap-3 w-full justify-end items-center`}>
                         <Link href={"/signIn"} className="border-2 border-foreground-default p-1.5 text-center rounded-md text-foreground-default hover:border-primary hover:text-primary hover:cursor-pointer w-32" aria-label="Botão de cadastro">Login</Link>
                         <Link href={"/signUp"} className="bg-foreground-default hover:bg-primary text-center hover:text-foreground-default text-foreground-inverse border-2 border-foreground-default hover:border-primary p-1.5 rounded-md hover:cursor-pointer w-32" aria-label="Botão de login">Cadastre-se</Link>
                     </div>
@@ -61,12 +64,12 @@ export default function HomeClient() {
             <main>
                 <section className="w-full h-screen flex justify-center items-center pt-14 p-6" id="home">
                     <div className="w-full sm:max-w-3xl flex flex-col items-center justify-center gap-16">
-                        <h1 className="text-4xl sm:text-5xl md:text-6xl text-center text-foreground-default">
+                        <h1 className={`text-4xl sm:text-5xl md:text-6xl text-center text-foreground-default`}>
                             Seu <span className="text-primary">mundo</span>, suas{" "}
                             <span className="text-primary">conexões</span>, e um universo{" "}
                             <span className="text-primary">sem limites</span> para explorar.
                         </h1>
-                        <div className="w-full flex flex-col md:flex-row justify-center gap-4">
+                        <div className={`w-full flex flex-col md:flex-row justify-center gap-4`}>
                             <Link href={"/signUp"} className="font-medium bg-foreground-default hover:bg-primary text-center hover:text-foreground-default text-foreground-inverse border-2 border-foreground-default hover:border-primary p-2.5 rounded-md hover:cursor-pointer w-full" aria-label="Botão de Comece sua jornada">Comece sua jornada</Link>
                             <Link href={"/signIn"} className="font-medium border-foreground-default text-center text-foreground-default hover:border-primary hover:text-primary border-2 hover:cursor-pointer rounded-md p-2.5 w-full" aria-label="Botão de Acesse seu espaço">Acesse seu espaço</Link>
                         </div>  
@@ -74,16 +77,16 @@ export default function HomeClient() {
                 </section>
 
                 <section className="w-full h-fit md:h-screen flex justify-center items-start mackbookAnimation" id="section2">
-                    <Image src="/mackbook.svg" width={200} height={100} className="md:max-w-5/6 transform translate-y-[-150px] lg:translate-y-[-50px] macbook opacity-0" alt="macbook image" priority={false} fetchPriority="low"/>
+                    <Image src="/mackbook.svg" width={200} height={100} className="lg:max-w-5/6 lg:max-h-5/6 transform translate-y-[-100px] sm:translate-y-[0px] macbook opacity-0" alt="macbook image" priority={false} fetchPriority="low"/>
                 </section>
                 
 
                 <section className="w-full h-screen flex justify-center items-center bg-primary" id="section3">
-                <h2>Sessao 3</h2>
+                    <h2>Sessao 3</h2>
                 </section>
 
                 <section className="w-full h-screen flex justify-center items-center" id="section4">
-                <h2>Sessao 4</h2>
+                    <h2>Sessao 4</h2>
                 </section>
 
             </main>

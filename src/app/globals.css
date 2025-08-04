@@ -1,7 +1,4 @@
 @import "tailwindcss";
-@plugin "daisyui" {
-  themes: false;
-}
 
 @theme {
   --color-primary: var(--primary);
@@ -25,6 +22,6 @@
 }
 
 ::selection {
-  background-color: var(--color-primary); /* Exemplo azul do Tailwind: blue-500 */
+  background-color: var(--color-primary);
   color: white;
 }
